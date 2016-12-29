@@ -185,7 +185,9 @@ bot.dialog('/auto', [
         session.send("Property Damage Liability Coverage: $5,000 minimum");
         session.send("Uninsured Motorist Bodily Injury Coverage: $15,000 per person / $30,000 per accident minimum");
         session.send("Uninsured Motorist Property Damage Coverage: $3,500 minimum");
-        session.endDialog();
+        //session.endDialog();
+        session.beginDialog('/carousel');
+        
     },
     function (session, results) {
         session.send("You entered '%s'", results.response);
