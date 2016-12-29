@@ -145,7 +145,8 @@ bot.dialog('/', [
 
 bot.dialog('/menu', [
     function (session) {
-        builder.Prompts.choice(session, "What insurance are you interested in?", "auto|home-owners|condo-owners|renters|life|health|Long-term-care");
+        var style = builder.ListStyle['button'];
+        builder.Prompts.choice(session, "What insurance are you interested in?", "auto|home-owners|condo-owners|renters|life|health|Long-term-care",{ listStyle: style });
     },
     function (session, results) {
         if (results.response && results.response.entity != '(quit)') {
